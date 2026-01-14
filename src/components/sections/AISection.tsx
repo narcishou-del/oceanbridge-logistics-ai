@@ -10,6 +10,8 @@ import {
   Users,
   Sparkles
 } from "lucide-react";
+import ContactFormDialog from "@/components/ContactFormDialog";
+import { Button } from "@/components/ui/button";
 
 const solutions = [
   {
@@ -128,13 +130,12 @@ const AISection = () => {
                 我们提供从需求分析到落地实施的全流程服务，帮助您快速构建智能物流体系
               </p>
             </div>
-            <a
-              href="#contact"
-              className="shrink-0 inline-flex items-center gap-2 px-8 py-4 bg-gradient-gold text-accent-foreground font-semibold rounded-full hover:shadow-glow transition-all duration-300"
-            >
-              <Zap className="w-5 h-5" />
-              预约演示
-            </a>
+            <ContactFormDialog title="AI解决方案咨询">
+              <Button className="shrink-0 inline-flex items-center gap-2 px-8 py-4 bg-gradient-gold text-accent-foreground font-semibold rounded-full hover:shadow-glow transition-all duration-300 h-auto">
+                <Zap className="w-5 h-5" />
+                方案咨询
+              </Button>
+            </ContactFormDialog>
           </div>
 
           {/* Decorative */}
