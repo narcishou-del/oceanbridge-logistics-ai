@@ -9,9 +9,11 @@ import {
   RefreshCw,
   FileCheck,
   Users,
-  Wallet
+  Wallet,
+  MessageSquare
 } from "lucide-react";
-
+import ContactFormDialog from "@/components/ContactFormDialog";
+import { Button } from "@/components/ui/button";
 const capabilities = [
   {
     icon: Database,
@@ -86,6 +88,15 @@ const BlueWhaleSection = () => {
             <br />
             <span className="text-lg">适用于年度出口量&gt;500Teu的中大型外贸企业</span>
           </p>
+          
+          <div className="mt-8">
+            <ContactFormDialog title="蓝鲸方案咨询">
+              <Button variant="outline" className="border-bluewhale text-bluewhale hover:bg-bluewhale/10 px-8 py-3 rounded-full">
+                <MessageSquare className="w-4 h-4 mr-2" />
+                方案咨询
+              </Button>
+            </ContactFormDialog>
+          </div>
         </motion.div>
 
         {/* Capabilities Grid */}

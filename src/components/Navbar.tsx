@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Anchor } from "lucide-react";
+import ContactFormDialog from "@/components/ContactFormDialog";
+import { Button } from "@/components/ui/button";
 
 const navItems = [
   { label: "产品服务", href: "#products" },
@@ -57,12 +59,11 @@ const Navbar = () => {
 
           {/* CTA */}
           <div className="hidden lg:block">
-            <a
-              href="#contact"
-              className="px-6 py-2.5 bg-gradient-ocean text-primary-foreground text-sm font-medium rounded-full hover:shadow-glow transition-all duration-300"
-            >
-              联系我们
-            </a>
+            <ContactFormDialog title="联系我们">
+              <Button className="px-6 py-2.5 bg-gradient-ocean text-primary-foreground text-sm font-medium rounded-full hover:shadow-glow transition-all duration-300 h-auto">
+                联系我们
+              </Button>
+            </ContactFormDialog>
           </div>
 
           {/* Mobile Menu Button */}
@@ -99,16 +100,21 @@ const Navbar = () => {
                     {item.label}
                   </motion.a>
                 ))}
-                <motion.a
-                  href="#contact"
+                <motion.div
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: navItems.length * 0.1 }}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="mt-4 px-8 py-4 bg-gradient-ocean text-primary-foreground font-semibold rounded-full text-center"
+                  className="mt-4"
                 >
-                  联系我们
-                </motion.a>
+                  <ContactFormDialog title="联系我们">
+                    <Button 
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className="w-full px-8 py-4 bg-gradient-ocean text-primary-foreground font-semibold rounded-full text-center h-auto"
+                    >
+                      联系我们
+                    </Button>
+                  </ContactFormDialog>
+                </motion.div>
               </div>
             </div>
           </motion.div>
