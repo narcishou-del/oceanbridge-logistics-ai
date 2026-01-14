@@ -46,18 +46,18 @@ const capabilities = [
 ];
 
 const features = [
+  "询比价管理",
+  "订单管理",
   "运单管理",
   "订舱管理",
-  "报关管理",
   "拖车调度",
+  "报关管理",
+  "预警提醒",
+  "数据报表",
+  "数据大屏",
   "费用管理",
   "对账结算",
-  "供应商管理",
-  "客户管理",
-  "数据报表",
-  "预警提醒",
-  "权限管理",
-  "审批流程"
+  "供应商管理"
 ];
 
 const BlueWhaleSection = () => {
@@ -84,7 +84,7 @@ const BlueWhaleSection = () => {
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             外贸企业国际物流供应链智能协同平台
             <br />
-            <span className="text-lg">适用于年度出口量 &gt;100TEU 的中大型外贸企业</span>
+            <span className="text-lg">适用于年度出口量&gt;500Teu的中大型外贸企业</span>
           </p>
         </motion.div>
 
