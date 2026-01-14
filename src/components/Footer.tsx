@@ -15,7 +15,7 @@ const Footer = () => {
   return (
     <footer id="contact" className="bg-card border-t border-border">
       <div className="container mx-auto px-6 py-16">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+        <div className="grid md:grid-cols-3 gap-12 mb-12">
           {/* Brand */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -61,53 +61,26 @@ const Footer = () => {
             </ul>
           </motion.div>
 
-          {/* Resources */}
+          {/* Contact */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
           >
-            <h4 className="text-lg font-semibold text-foreground mb-6">资源</h4>
-            <ul className="space-y-3">
-              {[
-                { label: "开发者文档", href: "#" },
-                { label: "API参考", href: "#" },
-                { label: "使用教程", href: "#" },
-                { label: "常见问题", href: "#" },
-              ].map((item) => (
-                <li key={item.label}>
-                  <a
-                    href={item.href}
-                    className="text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    {item.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </motion.div>
-
-          {/* Contact */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.3 }}
-          >
             <h4 className="text-lg font-semibold text-foreground mb-6">联系我们</h4>
             <ul className="space-y-4">
               <li className="flex items-center gap-3 text-muted-foreground">
                 <Mail className="w-5 h-5 text-primary" />
-                <span>contact@iloveseawin.com</span>
+                <span>houmj@sea-win.com.cn</span>
               </li>
               <li className="flex items-center gap-3 text-muted-foreground">
                 <Phone className="w-5 h-5 text-primary" />
-                <span>400-XXX-XXXX</span>
+                <span>houmj@sea-win.com.cn</span>
               </li>
               <li className="flex items-start gap-3 text-muted-foreground">
                 <MapPin className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                <span>上海市浦东新区</span>
+                <span>浙江省杭州市萧山区华瑞·汇金中心21F</span>
               </li>
             </ul>
           </motion.div>

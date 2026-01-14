@@ -181,6 +181,21 @@ const APISection = () => {
           ))}
         </motion.div>
 
+        {/* Get Documentation Button */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mt-10"
+        >
+          <a
+            href="#contact"
+            className="inline-flex items-center gap-2 px-8 py-3 border border-api text-api font-medium rounded-full hover:bg-api/10 transition-all duration-300"
+          >
+            获取完整接口文档
+          </a>
+        </motion.div>
+
         {/* Code Example */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}

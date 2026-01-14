@@ -131,8 +131,7 @@ const AISection = () => {
               </p>
             </div>
             <ContactFormDialog title="AI解决方案咨询">
-              <Button className="shrink-0 inline-flex items-center gap-2 px-8 py-4 bg-gradient-gold text-accent-foreground font-semibold rounded-full hover:shadow-glow transition-all duration-300 h-auto">
-                <Zap className="w-5 h-5" />
+              <Button variant="outline" className="shrink-0 inline-flex items-center gap-2 px-8 py-4 border-ai text-ai hover:bg-ai/10 font-semibold rounded-full transition-all duration-300 h-auto">
                 方案咨询
               </Button>
             </ContactFormDialog>
