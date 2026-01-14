@@ -21,12 +21,12 @@ const fleetFeatures = [
 ];
 
 const driverFeatures = [
-  "接单派单",
-  "导航路线",
-  "回单拍照",
-  "费用申报",
-  "行程记录",
-  "消息通知"
+  "接单提箱（箱封号OCR识别）",
+  "到厂签到",
+  "危险品照片存档",
+  "离厂签退",
+  "GPS跟踪",
+  "异常报告"
 ];
 
 const TruckingSection = () => {
