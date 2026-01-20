@@ -43,17 +43,50 @@ const ContactFormDialog = ({ children, title = "方案咨询" }: ContactFormDial
 
     setIsSubmitting(true);
     
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    toast({
-      title: "提交成功",
-      description: "我们会尽快与您联系！",
-    });
-    
-    setFormData({ name: "", phone: "", description: "" });
-    setOpen(false);
-    setIsSubmitting(false);
+    try {
+      // 组装消息内容
+      const content = `收到数字化产品咨询服务单，姓名：${formData.name}，电话：${formData.phone}，需求描述：${formData.description || '无'}。`;
+      
+      // 调用企微消息推送接口
+      const response = await fetch('http://47.99.51.122/hm/message/message/sendMessage', {
+        method: 'POST',
+        headers: {
+          'sessionId': '20260116aUSyuqBcOIvMvMl',
+          'source': 'lanmeng-2.0',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          employeeIdList: [1973],
+          qywxFlag: 1,
+          content: content,
+          title: '数字化产品咨询',
+          saveLogFlag: 1,
+          qywxExtra: {
+            msgType: 'text'
+          }
+        }),
+      });
+
+      if (response.ok) {
+        toast({
+          title: "提交成功",
+          description: "我们会尽快与您联系！",
+        });
+        setFormData({ name: "", phone: "", description: "" });
+        setOpen(false);
+      } else {
+        throw new Error('接口调用失败');
+      }
+    } catch (error) {
+      console.error('提交失败:', error);
+      toast({
+        title: "提交失败",
+        description: "请稍后重试或直接拨打电话联系我们",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
