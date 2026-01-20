@@ -54,11 +54,11 @@ const solutions = [
 
 const AISection = () => {
   return (
-    <section id="ai" className="py-24 relative overflow-hidden">
+    <section id="ai" className="py-24 relative overflow-hidden bg-gradient-to-br from-amber-50/30 via-white to-blue-50/30">
       {/* Background Decoration */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/4 left-0 w-96 h-96 bg-ai/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-ai/5 rounded-full blur-3xl" />
+        <div className="absolute top-1/4 left-0 w-96 h-96 bg-amber-200/20 rounded-full blur-3xl" />
+        <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-amber-200/20 rounded-full blur-3xl" />
       </div>
 
       <div className="container mx-auto px-6 relative">
@@ -69,7 +69,7 @@ const AISection = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-ai/10 text-ai text-sm mb-6">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-100 text-amber-600 text-sm font-medium mb-6">
             <Brain className="w-4 h-4" />
             智能物流
           </div>
@@ -94,15 +94,15 @@ const AISection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="group relative p-6 rounded-2xl bg-gradient-card border border-border hover:border-ai/30 transition-all duration-500 hover:shadow-hover overflow-hidden"
+              className="group relative p-6 rounded-2xl bg-white border border-blue-100 hover:border-amber-400 hover:shadow-lg transition-all duration-500 overflow-hidden"
             >
               {/* Highlight Badge */}
-              <div className="absolute top-4 right-4 px-3 py-1 rounded-full bg-ai/10 text-ai text-xs font-medium">
+              <div className="absolute top-4 right-4 px-3 py-1 rounded-full bg-amber-100 text-amber-600 text-xs font-medium">
                 {solution.highlight}
               </div>
 
-              <div className="w-14 h-14 rounded-xl bg-ai/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                <solution.icon className="w-7 h-7 text-ai" />
+              <div className="w-14 h-14 rounded-xl bg-amber-100 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                <solution.icon className="w-7 h-7 text-amber-600" />
               </div>
 
               <h3 className="text-xl font-bold text-foreground mb-3">{solution.title}</h3>
@@ -116,10 +116,7 @@ const AISection = () => {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="relative p-8 md:p-12 rounded-3xl overflow-hidden"
-          style={{
-            background: "linear-gradient(135deg, hsl(45 93% 58% / 0.1) 0%, hsl(35 93% 50% / 0.05) 100%)"
-          }}
+          className="relative p-8 md:p-12 rounded-3xl overflow-hidden bg-gradient-to-br from-amber-50 to-amber-100/50 border border-amber-200 shadow-sm"
         >
           <div className="flex flex-col md:flex-row items-center justify-between gap-8">
             <div>
@@ -131,14 +128,14 @@ const AISection = () => {
               </p>
             </div>
             <ContactFormDialog title="AI解决方案咨询">
-              <Button variant="outline" className="shrink-0 inline-flex items-center gap-2 px-8 py-4 border-ai text-ai hover:bg-ai/10 font-semibold rounded-full transition-all duration-300 h-auto">
+              <Button variant="outline" className="shrink-0 inline-flex items-center gap-2 px-8 py-4 border-2 border-amber-300 text-amber-600 hover:bg-amber-100 font-semibold rounded-full transition-all duration-300 h-auto">
                 方案咨询
               </Button>
             </ContactFormDialog>
           </div>
 
           {/* Decorative */}
-          <div className="absolute -top-20 -right-20 w-40 h-40 bg-ai/20 rounded-full blur-3xl" />
+          <div className="absolute -top-20 -right-20 w-40 h-40 bg-amber-300/30 rounded-full blur-3xl" />
         </motion.div>
       </div>
     </section>

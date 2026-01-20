@@ -64,7 +64,7 @@ const features = [
 
 const BlueWhaleSection = () => {
   return (
-    <section id="bluewhale" className="py-24 relative overflow-hidden bg-gradient-to-b from-background to-card/50">
+    <section id="bluewhale" className="py-24 relative overflow-hidden bg-gradient-to-b from-white to-blue-50/30">
       <div className="container mx-auto px-6">
         {/* Section Header */}
         <motion.div
@@ -73,7 +73,7 @@ const BlueWhaleSection = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-bluewhale/10 text-bluewhale text-sm mb-6">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-100 text-blue-600 text-sm font-medium mb-6">
             <Shield className="w-4 h-4" />
             SaaS 企业版
           </div>
@@ -108,10 +108,10 @@ const BlueWhaleSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="group p-6 rounded-2xl bg-card border border-border hover:border-bluewhale/30 transition-all duration-500 hover:shadow-hover"
+              className="group p-6 rounded-2xl bg-white border border-blue-100 hover:border-blue-400 hover:shadow-lg transition-all duration-500"
             >
-              <div className="w-14 h-14 rounded-xl bg-bluewhale/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                <cap.icon className="w-7 h-7 text-bluewhale" />
+              <div className="w-14 h-14 rounded-xl bg-blue-100 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                <cap.icon className="w-7 h-7 text-blue-600" />
               </div>
               <h3 className="text-xl font-semibold mb-2 text-foreground">{cap.title}</h3>
               <p className="text-muted-foreground">{cap.desc}</p>
@@ -135,7 +135,7 @@ const BlueWhaleSection = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.03 }}
-                className="px-4 py-2 rounded-full bg-bluewhale/10 text-bluewhale text-sm font-medium"
+                className="px-4 py-2 rounded-full bg-blue-100 text-blue-600 text-sm font-medium border border-blue-200"
               >
                 {feature}
               </motion.span>
@@ -148,7 +148,7 @@ const BlueWhaleSection = () => {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mt-16 p-8 rounded-2xl bg-gradient-card border border-border"
+          className="mt-16 p-8 rounded-2xl bg-gradient-to-br from-blue-50 to-white border border-blue-100 shadow-sm"
         >
           <div className="flex flex-col md:flex-row items-center justify-between gap-8">
             <div>
@@ -161,9 +161,9 @@ const BlueWhaleSection = () => {
               {["ERP", "WMS", "OMS", "TMS"].map((sys, index) => (
                 <div
                   key={index}
-                  className="w-16 h-16 rounded-xl bg-bluewhale/10 flex items-center justify-center border border-bluewhale/20"
+                  className="w-16 h-16 rounded-xl bg-blue-100 flex items-center justify-center border border-blue-200"
                 >
-                  <span className="text-sm font-bold text-bluewhale">{sys}</span>
+                  <span className="text-sm font-bold text-blue-600">{sys}</span>
                 </div>
               ))}
             </div>

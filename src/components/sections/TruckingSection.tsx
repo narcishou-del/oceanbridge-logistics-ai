@@ -41,7 +41,7 @@ const TruckingSection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-trucking/10 text-trucking text-sm mb-6">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-100 text-emerald-600 text-sm font-medium mb-6">
               <Truck className="w-4 h-4" />
               车队门户 + 司机小程序
             </div>
@@ -63,7 +63,7 @@ const TruckingSection = () => {
               href="https://truck.iloveseawin.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-trucking text-primary-foreground rounded-full font-medium hover:shadow-glow transition-all duration-300 mb-8"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-emerald-500 text-white rounded-full font-medium hover:bg-emerald-600 hover:shadow-lg transition-all duration-300 mb-8"
             >
               <Truck className="w-5 h-5" />
               访问车队门户
@@ -78,9 +78,9 @@ const TruckingSection = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.05 }}
-                  className="p-4 rounded-xl bg-card border border-border"
+                  className="p-4 rounded-xl bg-white border border-blue-100 shadow-sm"
                 >
-                  <feature.icon className="w-6 h-6 text-trucking mb-2" />
+                  <feature.icon className="w-6 h-6 text-emerald-500 mb-2" />
                   <h4 className="font-semibold text-foreground text-sm">{feature.title}</h4>
                   <p className="text-xs text-muted-foreground">{feature.desc}</p>
                 </motion.div>
@@ -98,12 +98,12 @@ const TruckingSection = () => {
           >
             <div className="relative max-w-sm mx-auto">
               {/* Phone Frame */}
-              <div className="relative bg-gradient-card rounded-[3rem] p-4 border border-border shadow-card">
-                <div className="bg-background rounded-[2.5rem] p-6 min-h-[500px]">
+              <div className="relative bg-gradient-to-br from-blue-50 to-white rounded-[3rem] p-4 border border-blue-100 shadow-lg">
+                <div className="bg-white rounded-[2.5rem] p-6 min-h-[500px] shadow-inner">
                   {/* App Header */}
                   <div className="flex items-center gap-3 mb-6">
-                    <div className="w-12 h-12 rounded-xl bg-trucking/10 flex items-center justify-center">
-                      <Smartphone className="w-6 h-6 text-trucking" />
+                    <div className="w-12 h-12 rounded-xl bg-emerald-100 flex items-center justify-center">
+                      <Smartphone className="w-6 h-6 text-emerald-600" />
                     </div>
                     <div>
                       <h4 className="font-bold text-foreground">司机小程序</h4>
@@ -120,9 +120,9 @@ const TruckingSection = () => {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.3 + index * 0.1 }}
-                        className="flex items-center gap-3 p-3 rounded-xl bg-card border border-border"
+                        className="flex items-center gap-3 p-3 rounded-xl bg-blue-50 border border-blue-100"
                       >
-                        <CheckCircle className="w-5 h-5 text-trucking" />
+                        <CheckCircle className="w-5 h-5 text-emerald-500" />
                         <span className="text-foreground">{feature}</span>
                       </motion.div>
                     ))}
@@ -131,8 +131,8 @@ const TruckingSection = () => {
               </div>
 
               {/* Decorative Elements */}
-              <div className="absolute -top-4 -right-4 w-24 h-24 bg-trucking/20 rounded-full blur-3xl" />
-              <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-trucking/10 rounded-full blur-3xl" />
+              <div className="absolute -top-4 -right-4 w-24 h-24 bg-emerald-200/40 rounded-full blur-3xl" />
+              <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-emerald-100/30 rounded-full blur-3xl" />
             </div>
           </motion.div>
         </div>

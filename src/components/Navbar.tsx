@@ -31,7 +31,9 @@ const Navbar = () => {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          isScrolled ? "glass py-4" : "bg-transparent py-6"
+          isScrolled
+            ? "bg-white/90 backdrop-blur-md shadow-sm border-b border-blue-100 py-4"
+            : "bg-transparent py-6"
         }`}
       >
         <div className="container mx-auto px-6 flex items-center justify-between">
@@ -85,7 +87,7 @@ const Navbar = () => {
             exit={{ opacity: 0, y: -20 }}
             className="fixed inset-0 z-40 lg:hidden"
           >
-            <div className="absolute inset-0 bg-background/95 backdrop-blur-xl pt-24 px-6">
+            <div className="absolute inset-0 bg-white/98 backdrop-blur-xl pt-24 px-6">
               <div className="flex flex-col gap-4">
                 {navItems.map((item, index) => (
                   <motion.a
@@ -95,7 +97,7 @@ const Navbar = () => {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: index * 0.1 }}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="text-2xl font-semibold text-foreground py-3 border-b border-border"
+                    className="text-2xl font-semibold text-foreground py-3 border-b border-blue-100"
                   >
                     {item.label}
                   </motion.a>
@@ -107,7 +109,7 @@ const Navbar = () => {
                   className="mt-4"
                 >
                   <ContactFormDialog title="联系我们">
-                    <Button 
+                    <Button
                       onClick={() => setIsMobileMenuOpen(false)}
                       className="w-full px-8 py-4 bg-gradient-ocean text-primary-foreground font-semibold rounded-full text-center h-auto"
                     >

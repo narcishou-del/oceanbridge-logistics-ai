@@ -31,7 +31,7 @@ const ContactFormDialog = ({ children, title = "方案咨询" }: ContactFormDial
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!formData.name.trim() || !formData.phone.trim()) {
       toast({
         title: "请填写完整信息",
@@ -42,18 +42,52 @@ const ContactFormDialog = ({ children, title = "方案咨询" }: ContactFormDial
     }
 
     setIsSubmitting(true);
-    
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    toast({
-      title: "提交成功",
-      description: "我们会尽快与您联系！",
-    });
-    
-    setFormData({ name: "", phone: "", description: "" });
-    setOpen(false);
-    setIsSubmitting(false);
+
+    try {
+      // 组装消息内容
+      const content = `收到数字化产品咨询服务单，姓名：${formData.name}，电话：${formData.phone}，需求描述：${formData.description || "无"}。`;
+
+      // 调用API
+      const response = await fetch('/hm/message/message/sendMessage', {
+        method: 'POST',
+        headers: {
+          'sessionId': '20260116aUSyuqBcOIvMvMl',
+          'source': 'lanmeng-2.0',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          employeeIdList: [1973],
+          qywxFlag: 1,
+          content: content,
+          title: "数字化产品咨询",
+          saveLogFlag: 1,
+          qywxExtra: {
+            msgType: "text"
+          }
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('提交失败');
+      }
+
+      toast({
+        title: "提交成功",
+        description: "我们会尽快与您联系！",
+      });
+
+      setFormData({ name: "", phone: "", description: "" });
+      setOpen(false);
+    } catch (error) {
+      console.error('提交失败:', error);
+      toast({
+        title: "提交失败",
+        description: "请稍后重试或联系我们的客服",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -61,7 +95,7 @@ const ContactFormDialog = ({ children, title = "方案咨询" }: ContactFormDial
       <DialogTrigger asChild>
         {children}
       </DialogTrigger>
-      <DialogContent className="sm:max-w-[425px] bg-card border-border">
+      <DialogContent className="sm:max-w-[425px] bg-white border-blue-100 shadow-xl">
         <DialogHeader>
           <DialogTitle className="text-xl font-bold text-foreground">{title}</DialogTitle>
           <DialogDescription className="text-muted-foreground">

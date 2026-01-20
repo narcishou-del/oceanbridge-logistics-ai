@@ -87,7 +87,7 @@ const APISection = () => {
   const activeData = apiCategories.find(c => c.id === activeCategory);
 
   return (
-    <section id="api" className="py-24 relative overflow-hidden bg-gradient-to-b from-card/50 to-background">
+    <section id="api" className="py-24 relative overflow-hidden bg-gradient-to-b from-blue-50/30 to-white">
       <div className="container mx-auto px-6">
         {/* Section Header */}
         <motion.div
@@ -96,7 +96,7 @@ const APISection = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-api/10 text-api text-sm mb-6">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-100 text-purple-600 text-sm font-medium mb-6">
             <Code className="w-4 h-4" />
             开发者接口
           </div>
@@ -119,8 +119,8 @@ const APISection = () => {
               onClick={() => setActiveCategory(category.id)}
               className={`flex items-center gap-2 px-6 py-3 rounded-full font-medium transition-all duration-300 ${
                 activeCategory === category.id
-                  ? "bg-api text-primary-foreground shadow-glow"
-                  : "bg-card border border-border text-muted-foreground hover:text-foreground"
+                  ? "bg-purple-600 text-white shadow-lg"
+                  : "bg-white border border-blue-100 text-muted-foreground hover:text-foreground hover:border-purple-300"
               }`}
             >
               <category.icon className="w-5 h-5" />
@@ -142,7 +142,7 @@ const APISection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
-              className="group p-6 rounded-2xl bg-card border border-border hover:border-api/30 transition-all duration-300"
+              className="group p-6 rounded-2xl bg-white border border-blue-100 hover:border-purple-400 hover:shadow-lg transition-all duration-300"
             >
               <div className="flex items-start justify-between mb-4">
                 <h3 className="text-xl font-bold text-foreground">{api.name}</h3>
@@ -151,7 +151,7 @@ const APISection = () => {
                     href={api.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-2 rounded-lg bg-api/10 text-api hover:bg-api hover:text-primary-foreground transition-colors"
+                    className="p-2 rounded-lg bg-purple-100 text-purple-600 hover:bg-purple-600 hover:text-white transition-colors"
                   >
                     <ArrowRight className="w-4 h-4" />
                   </a>
@@ -161,7 +161,7 @@ const APISection = () => {
               <p className="text-muted-foreground mb-4">{api.desc}</p>
 
               <div className="space-y-3">
-                <div className="p-3 rounded-lg bg-background border border-border">
+                <div className="p-3 rounded-lg bg-blue-50 border border-blue-100">
                   <div className="flex items-center gap-2 text-sm text-muted-foreground mb-1">
                     <FileText className="w-4 h-4" />
                     入参
@@ -169,7 +169,7 @@ const APISection = () => {
                   <p className="text-sm text-foreground">{api.params}</p>
                 </div>
 
-                <div className="p-3 rounded-lg bg-background border border-border">
+                <div className="p-3 rounded-lg bg-blue-50 border border-blue-100">
                   <div className="flex items-center gap-2 text-sm text-muted-foreground mb-1">
                     <Search className="w-4 h-4" />
                     返回
@@ -190,7 +190,7 @@ const APISection = () => {
         >
           <a
             href="#contact"
-            className="inline-flex items-center gap-2 px-8 py-3 border border-api text-api font-medium rounded-full hover:bg-api/10 transition-all duration-300"
+            className="inline-flex items-center gap-2 px-8 py-3 border-2 border-purple-200 text-purple-600 font-medium rounded-full hover:border-purple-400 hover:bg-purple-50 transition-all duration-300"
           >
             获取完整接口文档
           </a>

@@ -29,9 +29,9 @@ const features = [
 
 const BluefishSection = () => {
   return (
-    <section id="bluefish" className="py-24 relative overflow-hidden">
+    <section id="bluefish" className="py-24 relative overflow-hidden bg-blue-50/30">
       {/* Background Decoration */}
-      <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-bluefish/5 to-transparent pointer-events-none" />
+      <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-blue-100/50 to-transparent pointer-events-none" />
 
       <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -42,8 +42,8 @@ const BluefishSection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-bluefish/10 text-bluefish text-sm mb-6">
-              <span className="w-2 h-2 rounded-full bg-bluefish animate-pulse" />
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-100 text-blue-600 text-sm font-medium mb-6">
+              <span className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
               免费使用
             </div>
 
@@ -67,12 +67,12 @@ const BluefishSection = () => {
                 href="http://pc.iloveseawin.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-bluefish text-primary-foreground rounded-full font-medium hover:shadow-glow transition-all duration-300"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-blue-500 text-white rounded-full font-medium hover:bg-blue-600 hover:shadow-lg transition-all duration-300"
               >
                 <Monitor className="w-5 h-5" />
                 PC端登录
               </a>
-              <div className="inline-flex items-center gap-2 px-6 py-3 border border-bluefish/30 text-bluefish rounded-full font-medium">
+              <div className="inline-flex items-center gap-2 px-6 py-3 border-2 border-blue-200 text-blue-600 rounded-full font-medium hover:border-blue-400 hover:bg-blue-50 transition-all duration-300">
                 <Smartphone className="w-5 h-5" />
                 微信搜"Bluefish 蓝鳛"
               </div>
@@ -85,8 +85,8 @@ const BluefishSection = () => {
                 { value: "30+", label: "航线" },
                 { value: "10000+", label: "在线运价" },
               ].map((stat, index) => (
-                <div key={index} className="text-center p-4 rounded-xl bg-card border border-border">
-                  <div className="text-2xl font-bold text-bluefish">{stat.value}</div>
+                <div key={index} className="text-center p-4 rounded-xl bg-white border border-blue-100 shadow-sm">
+                  <div className="text-2xl font-bold text-blue-500">{stat.value}</div>
                   <div className="text-sm text-muted-foreground">{stat.label}</div>
                 </div>
               ))}
@@ -108,9 +108,9 @@ const BluefishSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.05 }}
-                className="group p-4 rounded-xl bg-card border border-border hover:border-bluefish/30 transition-all duration-300"
+                className="group p-4 rounded-xl bg-white border border-blue-100 hover:border-blue-300 hover:shadow-md transition-all duration-300"
               >
-                <feature.icon className="w-8 h-8 text-bluefish mb-3 group-hover:scale-110 transition-transform" />
+                <feature.icon className="w-8 h-8 text-blue-500 mb-3 group-hover:scale-110 transition-transform" />
                 <h4 className="font-semibold text-foreground mb-1">{feature.title}</h4>
                 <p className="text-sm text-muted-foreground">{feature.desc}</p>
               </motion.div>

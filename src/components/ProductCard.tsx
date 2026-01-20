@@ -30,13 +30,13 @@ const ProductCard = ({
       transition={{ duration: 0.6, delay }}
       whileHover={{ y: -8 }}
       onClick={onClick}
-      className="group relative bg-gradient-card rounded-2xl p-8 border border-border/50 cursor-pointer transition-all duration-500 hover:border-primary/30 hover:shadow-hover overflow-hidden"
+      className="group relative bg-white rounded-2xl p-8 border border-blue-100 shadow-sm cursor-pointer transition-all duration-500 hover:border-primary/30 hover:shadow-lg overflow-hidden"
     >
       {/* Glow Effect */}
-      <div 
+      <div
         className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-        style={{ 
-          background: `radial-gradient(circle at 50% 0%, ${color}15 0%, transparent 70%)` 
+        style={{
+          background: `radial-gradient(circle at 50% 0%, ${color}10 0%, transparent 70%)`
         }}
       />
 

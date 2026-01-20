@@ -6,13 +6,14 @@ const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-blue-50/50 via-white to-white" />
       <div className="absolute inset-0">
-        <img 
-          src={heroBg} 
-          alt="Global Logistics Network" 
-          className="w-full h-full object-cover opacity-40"
+        <img
+          src={heroBg}
+          alt="Global Logistics Network"
+          className="w-full h-full object-cover opacity-20 mix-blend-multiply"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/60 to-background" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/40 to-background" />
       </div>
 
       {/* Animated Particles */}
@@ -20,17 +21,17 @@ const Hero = () => {
         {[...Array(20)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute w-1 h-1 bg-primary/30 rounded-full"
-            initial={{ 
-              x: Math.random() * window.innerWidth, 
+            className="absolute w-1 h-1 bg-blue-400/20 rounded-full"
+            initial={{
+              x: Math.random() * window.innerWidth,
               y: Math.random() * window.innerHeight,
-              opacity: 0 
+              opacity: 0
             }}
-            animate={{ 
+            animate={{
               y: [null, -100],
               opacity: [0, 1, 0]
             }}
-            transition={{ 
+            transition={{
               duration: 3 + Math.random() * 2,
               repeat: Infinity,
               delay: Math.random() * 2
@@ -47,7 +48,7 @@ const Hero = () => {
           transition={{ duration: 0.8 }}
           className="mb-8"
         >
-          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm text-muted-foreground mb-6">
+          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 backdrop-blur-sm border border-blue-100 shadow-sm text-sm text-muted-foreground mb-6">
             <Anchor className="w-4 h-4 text-primary" />
             蓝盟智联 · 数字服务生态
           </span>
@@ -122,7 +123,7 @@ const Hero = () => {
         <motion.div
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
-          className="w-6 h-10 rounded-full border-2 border-muted-foreground/30 flex justify-center pt-2"
+          className="w-6 h-10 rounded-full border-2 border-blue-200/50 flex justify-center pt-2"
         >
           <div className="w-1 h-2 bg-primary rounded-full" />
         </motion.div>
